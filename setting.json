@@ -1,0 +1,5 @@
+{
+    "namespace" : "rime",
+    "publisher_name" : "xbox_controller",
+    "controller_port": "/dev/input/event20"
+}
