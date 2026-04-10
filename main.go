@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log/slog"
 	"os"
 
@@ -10,13 +11,19 @@ import (
 
 func main() {
 
-	device, err := evdev.Open("/dev/input/event20")
+	namespace := flag.String("namespace", "rime", "spine namespace to join")
+	key := flag.String("key", "ppap", "spine namespace key")
+	devicePath := flag.String("usb", "/dev/input/event20", "Path to Xbox controller event file")
+
+	flag.Parse()
+
+	device, err := evdev.Open(*devicePath)
 	if err != nil {
 		panic(err)
 	}
 
 	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
-	ns, err := spine.JointNamespace("rime", "ppap", logger)
+	ns, err := spine.JointNamespace(*namespace, *key, logger)
 	if err != nil {
 		panic(err)
 	}
