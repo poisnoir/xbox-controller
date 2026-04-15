@@ -13,6 +13,7 @@ import (
 func main() {
 
 	namespace := flag.String("namespace", "rime", "spine namespace to join")
+	name := flag.String("name", "xbox-controller", "publisher name")
 	key := flag.String("key", "ppap", "spine namespace key")
 	devicePath := flag.String("usb", "/dev/input/event19", "Path to Xbox controller event file")
 
@@ -29,7 +30,7 @@ func main() {
 		panic(err)
 	}
 
-	pub, err := spine.NewPublisher[models.XboxController](ns, "xbox-controller")
+	pub, err := spine.NewPublisher[models.XboxController](ns, *name)
 	if err != nil {
 		panic(err)
 	}
