@@ -7,13 +7,14 @@ import (
 
 	"github.com/holoplot/go-evdev"
 	"github.com/poisnoir/spine-go"
+	"github.com/poisnoir/xbox-controller/models"
 )
 
 func main() {
 
 	namespace := flag.String("namespace", "rime", "spine namespace to join")
 	key := flag.String("key", "ppap", "spine namespace key")
-	devicePath := flag.String("usb", "/dev/input/event20", "Path to Xbox controller event file")
+	devicePath := flag.String("usb", "/dev/input/event19", "Path to Xbox controller event file")
 
 	flag.Parse()
 
@@ -28,12 +29,12 @@ func main() {
 		panic(err)
 	}
 
-	pub, err := spine.NewPublisher[XboxController](ns, "xbox-controller")
+	pub, err := spine.NewPublisher[models.XboxController](ns, "xbox-controller")
 	if err != nil {
 		panic(err)
 	}
 
-	var data XboxController
+	var data models.XboxController
 
 	for {
 
@@ -47,7 +48,7 @@ func main() {
 	}
 }
 
-func updateControllerState(c *XboxController, ev *evdev.InputEvent) {
+func updateControllerState(c *models.XboxController, ev *evdev.InputEvent) {
 	switch ev.Type {
 	case 1: // EV_KEY (Buttons)
 		val := ev.Value == 1 // true if pressed, false if released
