@@ -48,6 +48,8 @@ github.com/poisnoir/mad-go v0.0.0-20260213164930-5bea82a451d0 h1:v/avcTie49/EO6W
 github.com/poisnoir/mad-go v0.0.0-20260213164930-5bea82a451d0/go.mod h1:bfDyui5P/lsmOnU7IpFdG+azShUBZecByQp4fW1eUa4=
 github.com/poisnoir/spine-go v0.0.0-20260409170147-77cad4c800d6 h1:B+eNgLFw807RAaFF24x8lO2GQx00STdNzK+ZgpD3EhU=
 github.com/poisnoir/spine-go v0.0.0-20260409170147-77cad4c800d6/go.mod h1:YDgaC+YXKQkZGWEDPB7iQ+ZEZWsucZJVy97Wd9fT+48=
+github.com/poisnoir/spine-go v0.0.0-20260511150505-fce5a2294797 h1:H3cuk7xVeMyTyCyYv3Cf4qXZ3EZjzFu5ZDpvk4lGDaY=
+github.com/poisnoir/spine-go v0.0.0-20260511150505-fce5a2294797/go.mod h1:YDgaC+YXKQkZGWEDPB7iQ+ZEZWsucZJVy97Wd9fT+48=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
 github.com/stretchr/testify v1.6.1 h1:hDPOHmpOpP40lSULcqw7IrRb/u7w6RpDC9399XyoNd0=
 github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
