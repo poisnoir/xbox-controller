@@ -80,15 +80,14 @@ func updateControllerState(c *models.XboxController, ev *evdev.InputEvent) {
 
 	case 3: // EV_ABS (Axes, Triggers, D-Pad)
 		switch ev.Code {
-		// Joysticks (with 10% deadzone approx)
 		case 0:
-			c.LeftStick.X = applyDeadzone(ev.Value)
+			c.LeftStick.X = ev.Value
 		case 1:
-			c.LeftStick.Y = applyDeadzone(ev.Value)
+			c.LeftStick.Y = ev.Value
 		case 3:
-			c.RightStick.X = applyDeadzone(ev.Value)
+			c.RightStick.X = ev.Value
 		case 4:
-			c.RightStick.Y = applyDeadzone(ev.Value)
+			c.RightStick.Y = ev.Value
 
 		// Triggers
 		case 2:
@@ -105,11 +104,4 @@ func updateControllerState(c *models.XboxController, ev *evdev.InputEvent) {
 			c.Down = ev.Value == 1
 		}
 	}
-}
-
-func applyDeadzone(val int32) int32 {
-	if val > -2000 && val < 2000 {
-		return 0
-	}
-	return val
 }

@@ -5,7 +5,7 @@ go 1.24.3
 
 require (
 	github.com/holoplot/go-evdev v0.0.0-20250804134636-ab1d56a1fe83
-	github.com/poisnoir/spine-go v0.0.0-20260511150505-fce5a2294797
+	github.com/poisnoir/spine-go v0.0.0-20260512133115-196c9f2639d4
 )
 
 require (
