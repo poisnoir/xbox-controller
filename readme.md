@@ -37,4 +37,4 @@ type Joystick struct {
 
 
 ## Dependencies
-- testing 1
+- testing
