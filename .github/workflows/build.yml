@@ -20,9 +20,11 @@ jobs:
       - name: Build
         run: go build -o xbox-controller .
 
-      - name: Upload binary
-        uses: actions/upload-artifact@v4
+      - name: Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: xbox-controller-${{ github.sha }}
-          path: xbox-controller
-          retention-days: 30
+          tag_name: build-${{ github.ref_name }}-${{ github.run_number }}
+          name: "Build #${{ github.run_number }} (${{ github.ref_name }})"
+          files: xbox-controller
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
