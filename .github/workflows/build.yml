@@ -18,7 +18,7 @@ jobs:
           go-version-file: go.mod
 
       - name: Build
-        run: go build -o xbox-controller ./...
+        run: go build -o xbox-controller .
 
       - name: Upload binary
         uses: actions/upload-artifact@v4
