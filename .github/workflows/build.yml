@@ -27,4 +27,4 @@ jobs:
           name: "Build #${{ github.run_number }} (${{ github.ref_name }})"
           files: xbox-controller
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
