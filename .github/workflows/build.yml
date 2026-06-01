@@ -28,3 +28,4 @@ jobs:
           files: xbox-controller
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          
