@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  push:
+    branches: ["**"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Build
+        run: go build -o xbox-controller ./...
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: xbox-controller-${{ github.sha }}
+          path: xbox-controller
+          retention-days: 30
